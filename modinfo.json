@@ -1,0 +1,11 @@
+﻿{
+  "id": "holyslimes",
+  "name": "Holy Slimes",
+  "author": "noobie1",
+  "description": "Adds holy and unholy slimes to your game!",
+  "version": "1.0",
+  "load_after": [
+    "largolibrary",
+    "SimpleSRmodLibrary"
+  ]
+}
