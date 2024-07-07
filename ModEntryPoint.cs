@@ -7,6 +7,7 @@ using UnityEngine;
 using MonomiPark.SlimeRancher.Regions;
 using HolySlimes.Creation;
 using HolySlimes.Creation.Slime;
+using HolySlimes.Creation.Gordo;
 using SRML.SR.Translation;
 using SRML.Utils;
 using ModdedIds;
@@ -53,6 +54,8 @@ namespace HolySlimes
                 }
                 return false;
             });
+
+            
 
             TranslationPatcher.AddActorTranslation("l." + (Ids.ANGEL_PLORT.ToString().ToLower()), "Angel Plort");
             PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.ANGEL_PLORT);
@@ -327,6 +330,7 @@ namespace HolySlimes
         // Used for registering things that require a loaded gamecontext
         public override void Load()
         {
+
             (SlimeDefinition, GameObject) ASlimeTuple = Heaven.AngelSlime();
 
             SlimeDefinition Angel_Slime_Definition = ASlimeTuple.Item1;
@@ -973,6 +977,8 @@ namespace HolySlimes
 
             SRML.Console.Console.RegisterCommand(new SpiritMode());
             SRML.Console.Console.RegisterCommand(new SpiritRandom());
+
+            Zones.angelGordo = Angel.AngelGordo().Item2;
         }
 
         // Called after all mods Load's have been called

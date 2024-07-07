@@ -48,7 +48,7 @@ namespace HolySlimes.Behaviors
         }
         public void TryToHeal(GameObject gameObj)
         {
-            int num = Mathf.CeilToInt(Time.deltaTime * health);
+            int num = Mathf.CeilToInt(health);
             if (num > 0)
             {
                 HealHP(num);

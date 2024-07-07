@@ -99,6 +99,9 @@ namespace HolySlimes.Creation.Slime
             IAaura.AddComponent<SphereCollider>().radius = 3;
             IAaura.GetComponent<SphereCollider>().isTrigger = true;
             IAaura.AddComponent<AngelHeal>().health = 1;
+
+            GameObject PAngemonPlort = ShortcutLib.Shortcut.Slime.CreatePlort(Identifiable.Id.PINK_PLORT, Ids.PURIFIED_ANGEMON_PLORT, "Purified Angemon Plort", Util.CreateSprite(Util.LoadImage("BsAngemonPlortIcon.png")), new Color32(125, 125, 125, 255), 1000f, 50f);
+            ShortcutLib.Shortcut.Slime.ColorPlort(Ids.PURIFIED_ANGEMON_PLORT, new Color32(218, 100, 40, 255), new Color32(172, 113, 83, 255), new Color32(125, 125, 125, 255), Identifiable.Id.PINK_PLORT);
             return (IAslimeDef, IAslimeObj, IAslimeApp);
         }
 

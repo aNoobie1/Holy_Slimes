@@ -86,6 +86,9 @@
     <Compile Include="Behaviors\SpiritHealOrDrain.cs" />
     <Compile Include="Commands\SpiritRandom.cs" />
     <Compile Include="Commands\SpiritMode.cs" />
+    <Compile Include="Creation\Gordo\Angel.cs" />
+    <Compile Include="Creation\Gordo\Demon.cs" />
+    <Compile Include="Creation\Gordo\Spirit.cs" />
     <Compile Include="Creation\Plorts.cs" />
     <Compile Include="Creation\Slime\Amalgamation.cs" />
     <Compile Include="Creation\Slime\Hades.cs" />
@@ -165,7 +168,7 @@
     <EmbeddedResource Include="Ramps\fruitBlursedPear_ramp_purple.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AssetBundles\Zones\inbetweenzone" />
+    <EmbeddedResource Include="AssetBundles\Zones\inbetweenzone" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

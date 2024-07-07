@@ -10,7 +10,18 @@ namespace HolySlimes
 {
     internal class Zones
     {
+        public static GameObject angelGordo;
         internal static AssetBundle inBetween = Util.LoadCustomZone("inbetweenzone");
+
+        private static void Gordos()
+        {
+            if (angelGordo != null)
+            {
+                var angel = UnityEngine.Object.Instantiate(angelGordo);
+                angel.transform.position = new Vector3(-117.1639f, -1.0307f, -261.2177f);
+                angel.transform.eulerAngles = new Vector3(0, 155.1125f, 0);
+            }
+        }
 
         public static void Init(SceneContext t)
         {
@@ -30,6 +41,7 @@ namespace HolySlimes
                 inbSeaKill.playerKillFx = inbSeaFX;
                 inbSeaKill.killFX = inbSeaFX;
             }
+            Gordos();
         }
     }
 }

@@ -80,11 +80,11 @@ namespace HolySlimes.Behaviors
             int num;
             if (mode == HealDrainMode.DRAIN)
             {
-                num = -Mathf.CeilToInt(Time.deltaTime * health);
+                num = -Mathf.CeilToInt(health);
             }
             else if (mode == HealDrainMode.HEAL)
             {
-                num = Mathf.CeilToInt(Time.deltaTime * health);
+                num = Mathf.CeilToInt(health);
             }
             else
             {

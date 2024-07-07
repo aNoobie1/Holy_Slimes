@@ -32,6 +32,7 @@ namespace HolySlimes.Behaviors
         {
             if (Time.time >= nextTime && col.gameObject == player)
             {
+
                 TryToDrain(col.gameObject);
             }
         }
@@ -54,11 +55,11 @@ namespace HolySlimes.Behaviors
             int num;
             if (emotions.model.emotionAgitation.currVal == 1f)
             {
-                num = Mathf.CeilToInt(Time.deltaTime * health * 2);
+                num = Mathf.CeilToInt(health * 2);
             }
             else
             {
-                num = Mathf.CeilToInt(Time.deltaTime * health);
+                num = Mathf.CeilToInt(health);
             }
             if (num > 0)
             {

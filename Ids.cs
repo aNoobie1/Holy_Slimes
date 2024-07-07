@@ -56,13 +56,20 @@ namespace ModdedIds
         public static readonly RanchDirector.Palette ANGEL_CHROMA;
         public static readonly RanchDirector.Palette DEMON_CHROMA;
     }
-    /*[EnumHolder]
+    [EnumHolder]
+    public class zoneIds
+    {
+        public static readonly ZoneDirector.Zone INBETWEEN;
+        public static readonly ZoneDirector.Zone HADES;
+        public static readonly ZoneDirector.Zone HEAVEN;
+    }
+    [EnumHolder]
     public class gordoIds
     {
         public static readonly Identifiable.Id ANGEL_GORDO;
         public static readonly Identifiable.Id DEMON_GORDO;
         public static readonly Identifiable.Id SPIRIT_GORDO;
-    }*/
+    }
     [EnumHolder]
     public class resourceIds
     {
