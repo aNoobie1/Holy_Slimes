@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2BB3C0B-EE6C-4115-A2AA-75711C853614}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HolySlimes</RootNamespace>
+    <AssemblyName>Holy_Slimes</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SRML\Libs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp_old, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SlimeRancher_Data\Managed\publicized_assemblies\Assembly-CSharp_old.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetsLib">
+      <HintPath>..\..\..\OneDrive\Desktop\SRModsGeneral\AssetsLib-341-1-2-1-1653243279\AssetsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ShortcutLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SRML\Mods\SRModsGeneral\FruitsyMods\ShortcutLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleSRmodLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SRML\Mods\ZionMods\SimpleSRmodLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SRML">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SlimeRancher_Data\Managed\SRML.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SlimeRancher_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SlimeRancher_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SlimeRancher_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SlimeRancher_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\AngelHeal.cs" />
+    <Compile Include="Behaviors\DemonDrain.cs" />
+    <Compile Include="Behaviors\SpiritHealOrDrainAura.cs" />
+    <Compile Include="Behaviors\SpiritHealOrDrain.cs" />
+    <Compile Include="Commands\SpiritRandom.cs" />
+    <Compile Include="Commands\SpiritMode.cs" />
+    <Compile Include="Creation\Plorts.cs" />
+    <Compile Include="Creation\Slime\Amalgamation.cs" />
+    <Compile Include="Creation\Slime\Hades.cs" />
+    <Compile Include="Creation\Slime\Heaven.cs" />
+    <Compile Include="Creation\Slime\InBetween.cs" />
+    <Compile Include="Creation\Slime\Purified.cs" />
+    <Compile Include="eatmaps.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FoodGroups.cs" />
+    <Compile Include="Ids.cs" />
+    <Compile Include="ModEntryPoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Zones.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="modinfo.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ramps\ramp_cursedhen_beak.png" />
+    <EmbeddedResource Include="Ramps\ramp_cursedhen_chickyellow.png" />
+    <EmbeddedResource Include="Ramps\ramp_cursedhen_red.png" />
+    <EmbeddedResource Include="Ramps\ramp_cursedhen_whitey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ramps\fruitGhostlyPogo_ramp_green.png" />
+    <EmbeddedResource Include="Ramps\fruitGhostlyPogo_ramp_orange.png" />
+    <EmbeddedResource Include="Ramps\fruitGhostlyPogo_ramp_red.png" />
+    <EmbeddedResource Include="Ramps\veggieBlessedCarrot_ramp_dirt.png" />
+    <EmbeddedResource Include="Ramps\veggieBlessedCarrot_ramp_green.png" />
+    <EmbeddedResource Include="Ramps\veggieBlessedCarrot_ramp_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssetBundles\Structures\angelhalo" />
+    <EmbeddedResource Include="AssetBundles\Structures\demonhorns" />
+    <EmbeddedResource Include="AssetBundles\Structures\fallangtail" />
+    <EmbeddedResource Include="AssetBundles\Structures\forgdemhalo" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssetBundles\Structures\spiritorbs" />
+    <EmbeddedResource Include="AssetBundles\Structures\wandspirorbs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ramps\fruitAmalgamango_ramp_dgreen.png" />
+    <EmbeddedResource Include="Ramps\fruitAmalgamango_ramp_lgreen.png" />
+    <EmbeddedResource Include="Ramps\fruitAmalgamango_ramp_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BsAmalgamangoIcon.png" />
+    <EmbeddedResource Include="Images\BsAngelEssenceIcon.png" />
+    <EmbeddedResource Include="Images\BsAngelIcon.png" />
+    <EmbeddedResource Include="Images\BsAngelIconSS.png" />
+    <EmbeddedResource Include="Images\BsAngelPlortIcon.png" />
+    <EmbeddedResource Include="Images\BsAngemonIcon.png" />
+    <EmbeddedResource Include="Images\BsAngemonPlortIcon.png" />
+    <EmbeddedResource Include="Images\BsBlessedCarrotIcon.png" />
+    <EmbeddedResource Include="Images\BsBlessedEssenceIcon.png" />
+    <EmbeddedResource Include="Images\BsBlessedIcon.png" />
+    <EmbeddedResource Include="Images\BsBlursedIcon.png" />
+    <EmbeddedResource Include="Images\BsCursedEssenceIcon.png" />
+    <EmbeddedResource Include="Images\BsCursedHenIcon.png" />
+    <EmbeddedResource Include="Images\BsCursedIcon.png" />
+    <EmbeddedResource Include="Images\BsDemonEssenceIcon.png" />
+    <EmbeddedResource Include="Images\BsDemonIcon.png" />
+    <EmbeddedResource Include="Images\BsDemonIconSS.png" />
+    <EmbeddedResource Include="Images\BsDemonPlortIcon.png" />
+    <EmbeddedResource Include="Images\BsGhostlyEssenceIcon.png" />
+    <EmbeddedResource Include="Images\BsGhostlyIcon.png" />
+    <EmbeddedResource Include="Images\BsGhostlyPogoIcon.png" />
+    <EmbeddedResource Include="Images\BsSpiritEssenceIcon.png" />
+    <EmbeddedResource Include="Images\BsSpiritIcon.png" />
+    <EmbeddedResource Include="Images\BsSpiritIconSS.png" />
+    <EmbeddedResource Include="Images\BsSpiritPlortIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ramps\fruitBlursedPear_ramp_green.png" />
+    <EmbeddedResource Include="Ramps\fruitBlursedPear_ramp_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AssetBundles\Zones\inbetweenzone" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
