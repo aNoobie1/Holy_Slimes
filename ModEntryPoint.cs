@@ -7,7 +7,7 @@ using UnityEngine;
 using MonomiPark.SlimeRancher.Regions;
 using HolySlimes.Creation;
 using HolySlimes.Creation.Slime;
-using HolySlimes.Creation.Gordo;
+//using HolySlimes.Creation.Gordo;
 using SRML.SR.Translation;
 using SRML.Utils;
 using ModdedIds;
@@ -29,6 +29,8 @@ namespace HolySlimes
         public static Color32 Bmouth = new Color32(118, 103, 117, 255);
         public static Color32 IAeyes = new Color32(118, 103, 117, 255);
         public static Color32 IAmouth = new Color32(118, 103, 117, 255);
+
+        public static AssetBundle slimeData = Util.LoadCustomData("slimedata");
 
         // Called before GameContext.Awake
         // You want to register new things and enum values here, as well as do all your harmony patching
@@ -978,7 +980,17 @@ namespace HolySlimes
             SRML.Console.Console.RegisterCommand(new SpiritMode());
             SRML.Console.Console.RegisterCommand(new SpiritRandom());
 
-            Zones.angelGordo = Angel.AngelGordo().Item2;
+            TranslationPatcher.AddActorTranslation("l.angel_toy", "Halo Plush");
+            var slimeDataAssets = slimeData.LoadAllAssets();
+            GameObject haloToyObj = (GameObject)slimeDataAssets.FirstOrDefault(obj => obj.name == "AngelToy");
+            ToyDefinition haloToyDef = (ToyDefinition)slimeDataAssets.FirstOrDefault(obj => obj.name == "AngelHaloToy");
+            haloToyDef.toyId = toyIds.HALO_TOY;
+            haloToyObj.GetComponent<Identifiable>().id = toyIds.HALO_TOY;
+            LookupRegistry.RegisterToy(haloToyDef);
+            LookupRegistry.RegisterIdentifiablePrefab(haloToyObj);
+            GameContext.Instance.LookupDirector.RegisterToy(haloToyDef, haloToyObj);
+
+            //Zones.angelGordo = Angel.AngelGordo().Item2;
         }
 
         // Called after all mods Load's have been called

@@ -47,6 +47,7 @@ namespace HolySlimes.Utility
         public static Sprite CreateSprite(Texture2D texture) => Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 1);
 
         public static AssetBundle LoadCustomStructure(string filename) => AssetBundle.LoadFromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("HolySlimes.AssetBundles.Structures." + filename));
+        public static AssetBundle LoadCustomData(string filename) => AssetBundle.LoadFromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("HolySlimes.AssetBundles.Data." + filename));
         public static AssetBundle LoadCustomZone(string filename) => AssetBundle.LoadFromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("HolySlimes.AssetBundles.Zones." + filename));
     }
 }

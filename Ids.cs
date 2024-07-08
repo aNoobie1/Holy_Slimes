@@ -85,6 +85,11 @@ namespace ModdedIds
     {
         public static readonly Gadget.Id ANGEL_DEMON_COMBINER;
     }
+    [EnumHolder]
+    public class toyIds
+    {
+        public static readonly Identifiable.Id HALO_TOY;
+    }
 
     public enum HealDrainMode
     {

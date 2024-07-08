@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviors\AngelHeal.cs" />
+    <Compile Include="Behaviors\CustomSpawner.cs" />
     <Compile Include="Behaviors\DemonDrain.cs" />
     <Compile Include="Behaviors\SpiritHealOrDrainAura.cs" />
     <Compile Include="Behaviors\SpiritHealOrDrain.cs" />
@@ -169,6 +170,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AssetBundles\Zones\inbetweenzone" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssetBundles\Data\slimedata" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
