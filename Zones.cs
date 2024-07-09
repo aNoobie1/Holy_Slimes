@@ -24,6 +24,9 @@ namespace HolySlimes
             return true;
         }
     }
+
+    
+
     internal class Zones
     {
         /*public static GameObject angelGordo;*/
@@ -43,24 +46,48 @@ namespace HolySlimes
 
         public static void Init(SceneContext t)
         {
-            inbObjects = inBetween.LoadAllAssets<GameObject>();
-            GameObject inbZone = inbObjects.FirstOrDefault(obj => obj.name == "zoneBETWEEN");
+            inbObjects = inBetween.LoadAllAssets();
+            var inbGObjectsL = new List<GameObject>();
 
-            if (inbZone != null)
+            foreach (var obj in inbObjects) 
+                if (obj is GameObject gobj)
+                    inbGObjectsL.Add(gobj);
+
+            inbGObjects = inbGObjectsL.ToArray();
+
+            var inbZoneObj = inbGObjects.FirstOrDefault(obj => obj.name == "zoneBETWEEN");
+
+            if (inbZoneObj != null)
             {
-                InbetweenLoad(inbZone, t);
+                InbetweenLoad(inbZoneObj, t);
             }
             //Gordos();
         }
 
-        private static GameObject[] inbObjects;
+        private static void PrepMaterials(object[] zoneData)
+        {
+            foreach(var obj in zoneData)
+            {
+                if (obj is Material mat)
+                {
+                    var sname = mat.shader.name;
+                    mat.shader = Resources.FindObjectsOfTypeAll<Shader>().FirstOrDefault(s => s.name == sname);
+                }
+            }
+        }
+        private static GameObject[] inbGObjects;
+        private static object[] inbObjects;
 
         private static void PrepSpawner(DirectedSlimeSpawner ss)
         {
             foreach (var ssm in ss.constraints[0].slimeset.members)
             {
-                ssm.prefab = GameContext.Instance.LookupDirector.GetPrefab((Identifiable.Id)Enum.Parse(typeof(Identifiable.Id), ssm.prefab.name));
-            }
+                try
+                {
+                    ssm.prefab = GameContext.Instance.LookupDirector.GetPrefab((Identifiable.Id)Enum.Parse(typeof(Identifiable.Id), ssm.prefab.name));
+                }
+                catch{}
+                }
         }
 
         private static void Spawners(GameObject zone)
@@ -73,6 +100,7 @@ namespace HolySlimes
 
         private static void InbetweenLoad(GameObject prefab, SceneContext t)
         {
+            PrepMaterials(inbObjects);
             prefab.GetComponent<ZoneDirector>().zone = ModdedIds.zoneIds.INBETWEEN;
 
             Spawners(prefab);
@@ -91,7 +119,7 @@ namespace HolySlimes
             inbSeaFollow.mainCamera = Camera.current;
 
             var inbSeaKill = inbSea.AddComponent<KillOnTrigger>();
-            var inbSeaFX = inbObjects.FirstOrDefault(obj => obj.name == "FX_SoulSeaDeath");
+            var inbSeaFX = inbGObjects.FirstOrDefault(obj => obj.name == "FX_SoulSeaDeath");
 
             inbSeaKill.playerKillFx = inbSeaFX;
             inbSeaKill.killFX = inbSeaFX;

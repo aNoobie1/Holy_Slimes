@@ -172,9 +172,6 @@
     <EmbeddedResource Include="AssetBundles\Zones\inbetweenzone" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NewFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="AssetBundles\Data\slimedata" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -88,7 +88,7 @@ namespace ModdedIds
     [EnumHolder]
     public class toyIds
     {
-        public static readonly Identifiable.Id HALO_TOY;
+        //public static readonly Identifiable.Id HALO_TOY;
     }
 
     public enum HealDrainMode

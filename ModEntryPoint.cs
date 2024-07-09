@@ -980,7 +980,7 @@ namespace HolySlimes
             SRML.Console.Console.RegisterCommand(new SpiritMode());
             SRML.Console.Console.RegisterCommand(new SpiritRandom());
 
-            TranslationPatcher.AddActorTranslation("l.angel_toy", "Halo Plush");
+            /*TranslationPatcher.AddActorTranslation("l.angel_toy", "Halo Plush");
             var slimeDataAssets = slimeData.LoadAllAssets();
             GameObject haloToyObj = (GameObject)slimeDataAssets.FirstOrDefault(obj => obj.name == "AngelToy");
             ToyDefinition haloToyDef = (ToyDefinition)slimeDataAssets.FirstOrDefault(obj => obj.name == "AngelHaloToy");
@@ -988,7 +988,7 @@ namespace HolySlimes
             haloToyObj.GetComponent<Identifiable>().id = toyIds.HALO_TOY;
             LookupRegistry.RegisterToy(haloToyDef);
             LookupRegistry.RegisterIdentifiablePrefab(haloToyObj);
-            GameContext.Instance.LookupDirector.RegisterToy(haloToyDef, haloToyObj);
+            GameContext.Instance.LookupDirector.RegisterToy(haloToyDef, haloToyObj);*/
 
             //Zones.angelGordo = Angel.AngelGordo().Item2;
         }
