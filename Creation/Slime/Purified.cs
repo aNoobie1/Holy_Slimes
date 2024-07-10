@@ -17,9 +17,6 @@ namespace HolySlimes.Creation.Slime
     {
         public static (SlimeDefinition, GameObject, SlimeAppearance) PAngemonSlime()
         {
-            Color32 IAeyes = new Color32(118, 103, 117, 255);
-            Color32 IAmouth = new Color32(118, 103, 117, 255);
-
             (SlimeDefinition, GameObject, SlimeAppearance) IAngemonSlime = Shortcut.Slime.CreateSlime(Identifiable.Id.HUNTER_SLIME, Identifiable.Id.PINK_SLIME, Ids.PURIFIED_ANGEMON_SLIME, "Purified Angemon Slime", Util.CreateSprite(Util.LoadImage("BsAngemonIcon.png")), new Color32(125, 125, 125, 255), new Color32(125, 125, 125, 255));
             SlimeDefinition IAslimeDef = IAngemonSlime.Item1;
             GameObject IAslimeObj = IAngemonSlime.Item2;
@@ -75,7 +72,7 @@ namespace HolySlimes.Creation.Slime
             Material IAmat3 = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.PHOSPHOR_SLIME).AppearancesDefault[0].Structures[2].DefaultMaterials[0]);
             IAmat3.SetColor("_TopColor", new Color32(218, 100, 40, 255));
             IAmat3.SetColor("_MiddleColor", new Color32(172, 113, 83, 255));
-            IAmat3.SetColor("_BottomColor", new Color32(125, 125, 125, 255));
+            IAmat3.SetColor("_BottomColor", new Color32(255, 35, 35, 255));
             IAstructures[3].DefaultMaterials[0] = IAmat3;
             Material IAmat4 = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.HUNTER_SLIME).AppearancesDefault[0].Structures[1].DefaultMaterials[0]);
             IAmat4.SetColor("_TopColor", new Color32(218, 100, 40, 255));
@@ -92,7 +89,7 @@ namespace HolySlimes.Creation.Slime
             IAmat6.SetColor("_MiddleColor", new Color32(172, 113, 83, 255));
             IAmat6.SetColor("_BottomColor", new Color32(125, 125, 125, 255));
             IAstructures[6].DefaultMaterials[0] = IAmat6;
-            IAslimeApp.ColorFace(IAeyes, IAeyes, IAeyes, IAmouth, IAmouth, IAmouth);
+            IAslimeApp.ColorFace(new Color32(76, 66, 75, 255), new Color32(118, 103, 117, 255), new Color32(76, 66, 75, 255), new Color32(141, 124, 139, 255), new Color32(118, 103, 117, 255), new Color32(76, 66, 75, 255));
             PediaRegistry.RegisterIdEntry(Ids.PURIFIED_ANGEMON_ENTRY, Util.CreateSprite(Util.LoadImage("BsAngemonIcon.png")));
             var IAaura = new GameObject("AngelHealSource");
             IAaura.transform.parent = IAslimeObj.transform;
@@ -107,8 +104,6 @@ namespace HolySlimes.Creation.Slime
 
         public static (SlimeDefinition, GameObject, SlimeAppearance) PBlursedSlime()
         {
-            Color32 Beyes = new Color32(118, 103, 117, 255);
-            Color32 Bmouth = new Color32(118, 103, 117, 255);
             (SlimeDefinition, GameObject, SlimeAppearance) IBlursedSlime = Shortcut.Slime.CreateSlime(Identifiable.Id.PUDDLE_SLIME, Identifiable.Id.PUDDLE_SLIME, Ids.PURIFIED_BLURSED_SLIME, "Purified Blursed Slime", Util.CreateSprite(Util.LoadImage("BsBlursedIcon.png")), new Color32(125, 125, 125, 255), new Color32(125, 125, 125, 255));
             SlimeDefinition IBslimeDef = IBlursedSlime.Item1;
             GameObject IBslimeObj = IBlursedSlime.Item2;
@@ -161,7 +156,7 @@ namespace HolySlimes.Creation.Slime
             IBmat5.SetColor("_MiddleColor", new Color32(172, 113, 83, 255));
             IBmat5.SetColor("_BottomColor", new Color32(125, 125, 125, 255));
             IBstructures[4].DefaultMaterials[0] = IBmat5;
-            IBslimeApp.ColorFace(Beyes, Beyes, Beyes, Bmouth, Bmouth, Bmouth);
+            IBslimeApp.ColorFace(new Color32(76, 66, 75, 255), new Color32(118, 103, 117, 255), new Color32(76, 66, 75, 255), new Color32(141, 124, 139, 255), new Color32(118, 103, 117, 255), new Color32(76, 66, 75, 255));
             PediaRegistry.RegisterIdEntry(Ids.PURIFIED_BLURSED_ENTRY, Util.CreateSprite(Util.LoadImage("BsBlursedIcon.png")));
             return (IBslimeDef, IBslimeObj, IBslimeApp);
         }

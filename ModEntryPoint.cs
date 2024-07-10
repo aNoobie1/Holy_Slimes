@@ -173,7 +173,7 @@ namespace HolySlimes
             });
             
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.ANGEL_SLIME);
+            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.ANGEL_PLORT);
             PediaRegistry.RegisterIdentifiableMapping(Ids.ANGEL_ENTRY, Ids.ANGEL_SLIME);
             PediaRegistry.SetPediaCategory(Ids.ANGEL_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.ANGEL_ENTRY)
@@ -185,7 +185,7 @@ namespace HolySlimes
                 .SetRisksTranslation("Angel Slimes will sacrifice themselves to destroy any traces of Demon Slimes. Make sure never to let an Angel Slime near a Demon Plort. While within an Angel Slime's aura, it will actively heal you, so it may be beneficial to keep around.")
                 .SetPlortonomicsTranslation("Angel Plorts are used on Earth to work miracles for the population. They can cure many diseases, bring water to deserts, and even revive extinct species. In these acts, the plort is consumed, so they are in constant demand.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.DEMON_SLIME);
+            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.DEMON_PLORT);
             PediaRegistry.RegisterIdentifiableMapping(Ids.DEMON_ENTRY, Ids.DEMON_SLIME);
             PediaRegistry.SetPediaCategory(Ids.DEMON_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.DEMON_ENTRY)
@@ -197,7 +197,7 @@ namespace HolySlimes
                 .SetRisksTranslation("Demon Slimes will sacrifice themselves to destroy any traces of Angel Slimes. Make sure never to let a Demon Slime near an Angel Plort. The Demon Slime's fire has been proven to drain the vitality of anyone who touches it. What's more, you will not naturally heal from this, so be careful around them.")
                 .SetPlortonomicsTranslation("Demon Plorts are capable of producing mass catastrophies. In the wrong hands, these plorts can terrorize nations with natural disasters, plagues, and bankruptcy. In scientific hands however, they can be used to study these things. In these acts, the plort is consumed, so they are in constant demand.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.SPIRIT_SLIME);
+            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.SPIRIT_PLORT);
             PediaRegistry.RegisterIdentifiableMapping(Ids.SPIRIT_ENTRY, Ids.SPIRIT_SLIME);
             PediaRegistry.SetPediaCategory(Ids.SPIRIT_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.SPIRIT_ENTRY)
@@ -209,7 +209,6 @@ namespace HolySlimes
                 .SetRisksTranslation("In an attempt to revert to their normal states, Spirit Slimes will seek out Angel and Demon Plorts to eat. This, however, always fails and, instead, causes the spirit slime to lose sentience entirely. The odd effect around their bodies is not just for show; upon contact with a spirit slime, it will either heal you, drain your vitality, or do nothing at all.")
                 .SetPlortonomicsTranslation("Spirit plorts are often used in situations of dire emergency, when you need a miracle and are willing to deal with anything to get it. These plorts will work a miracle, but will also work a corresponding disaster alongside it. Desperate people will buy these plorts for extra newbucks.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.CURSED_SLIME);
             PediaRegistry.RegisterIdentifiableMapping(Ids.CURSED_ENTRY, Ids.CURSED_SLIME);
             PediaRegistry.SetPediaCategory(Ids.CURSED_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.CURSED_ENTRY)
@@ -221,7 +220,6 @@ namespace HolySlimes
                 .SetRisksTranslation("Cursed Slimes produce Cursed Hens which, when eaten by any slime other than a Demon Slime, will transform it into another Cursed Slime. Only Angel and Spirit Slimes can resist these urges. If left unchecked, they can easily overtake an entire area.")
                 .SetPlortonomicsTranslation("Cursed Slimes produce no plorts, only Cursed Hens.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.BLESSED_SLIME);
             PediaRegistry.RegisterIdentifiableMapping(Ids.BLESSED_ENTRY, Ids.BLESSED_SLIME);
             PediaRegistry.SetPediaCategory(Ids.BLESSED_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.BLESSED_ENTRY)
@@ -233,7 +231,6 @@ namespace HolySlimes
                 .SetRisksTranslation("Blessed Slimes produce Blessed Carrots which, when eaten by any slime other than an Angel Slime, will transform it into another Blessed Slime. Demon and Spirit Slimes are forbidden to eat this item. If left unchecked, they can easily overtake an entire area.")
                 .SetPlortonomicsTranslation("Blessed Slimes produce no plorts, only Blessed Carrots.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.GHOSTLY_SLIME);
             PediaRegistry.RegisterIdentifiableMapping(Ids.GHOSTLY_ENTRY, Ids.GHOSTLY_SLIME);
             PediaRegistry.SetPediaCategory(Ids.GHOSTLY_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.GHOSTLY_ENTRY)
@@ -245,7 +242,7 @@ namespace HolySlimes
                 .SetRisksTranslation("Ghostly Slimes produce Ghostly Pogofruit which, when eaten by any slime other than a Spirit Slime, will transform it into another Ghostly Slime. Angel and Demon Slimes avoid this food at all costs. If left unchecked, they can easily overtake an entire area.")
                 .SetPlortonomicsTranslation("Ghostly Slimes produce no plorts, only Ghostly Pogofruit.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.ANGEMON_SLIME);
+            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.ANGEMON_PLORT);
             PediaRegistry.RegisterIdentifiableMapping(Ids.ANGEMON_ENTRY, Ids.ANGEMON_SLIME);
             PediaRegistry.SetPediaCategory(Ids.ANGEMON_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.ANGEMON_ENTRY)
@@ -257,7 +254,6 @@ namespace HolySlimes
                 .SetRisksTranslation("This slime, as it should not exist, is extremely unstable. If it eats the plort of either Angel or Demon slimes, it will transform them into the Angemon Plort. Additionally, it will eat the Angel and Demon Slimes and transform them into more Angemon Slimes, and transform Spirit Slimes into energy for itself.")
                 .SetPlortonomicsTranslation("The plorts of this amalgamation are worthless, and so they are not worth much. As such, they are not worth selling.");
             
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.BLURSED_SLIME);
             PediaRegistry.RegisterIdentifiableMapping(Ids.BLURSED_ENTRY, Ids.BLURSED_SLIME);
             PediaRegistry.SetPediaCategory(Ids.BLURSED_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.BLURSED_ENTRY)
@@ -269,7 +265,7 @@ namespace HolySlimes
                 .SetRisksTranslation("This slime, as it should not exist, is extremely unstable. If it eats the plort of either Angel or Demon slimes, it will dematerialize them. Additionally, it will eat the Angel, Demon, Blessed, and Cursed Slimes and transform them into more Angemon and Blursed Slimes, and transform Spirit and Ghostly Slimes into energy for itself. As if this were not enough, this slime will also produce a horrid fruit called the Amalgamango. It is the favorite food of Angemon Slimes, and also acts as a means of spreading via consumption by other slimes. Angel, Demon, and Spirit Slimes will avoid this food like the plague, which it effectively is.")
                 .SetPlortonomicsTranslation("This amalgamation has no plorts; it only produces Amalgamangos.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.PURIFIED_ANGEMON_SLIME);
+            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.PURIFIED_ANGEMON_PLORT);
             PediaRegistry.RegisterIdentifiableMapping(Ids.PURIFIED_ANGEMON_ENTRY, Ids.PURIFIED_ANGEMON_SLIME);
             PediaRegistry.SetPediaCategory(Ids.PURIFIED_ANGEMON_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.PURIFIED_ANGEMON_ENTRY)
@@ -281,7 +277,6 @@ namespace HolySlimes
                 .SetRisksTranslation("This slime seems to have no risks other than having regained the supernatural healing and draining effects of the Angel and Demon Slimes. It does not seem to attack either Angel or Demon Slimes, hinting at a possible desire for peace which its previous habit of corrupting either slime may have ben an attempt to accomplish.")
                 .SetPlortonomicsTranslation("Due to the recent discovery of this slime, the effects of its plorts are still being researched. It is theorized that they can produce stronger miracles and disasters that Angel or Demon plorts alone, but this is yet to be tested.");
 
-            PediaRegistry.RegisterIdentifiableMapping(PediaDirector.Id.PLORTS, Ids.PURIFIED_BLURSED_SLIME);
             PediaRegistry.RegisterIdentifiableMapping(Ids.PURIFIED_BLURSED_ENTRY, Ids.PURIFIED_BLURSED_SLIME);
             PediaRegistry.SetPediaCategory(Ids.PURIFIED_BLURSED_ENTRY, PediaRegistry.PediaCategory.SLIMES);
             new SlimePediaEntryTranslation(Ids.PURIFIED_BLURSED_ENTRY)
@@ -292,6 +287,72 @@ namespace HolySlimes
                 .SetSlimeologyTranslation("Similar to the Purified Angemon Slime, the cause of this slime's sudden stabilization is unknown, but the two are theorized to stabilize through identical methods. Research is being actively conducted on this slime to uncover more information about it.")
                 .SetRisksTranslation("This slime, due to its stabilization, has begun producing a much more appetizing fruit known as the Blursed Pear. It is similar to the other foods of supernatural origin in that it will transform any slime who eats it into another Purified Blursed Slime.")
                 .SetPlortonomicsTranslation("Purified Blursed Slimes produce no plorts, only Blursed Pears.");
+
+            PediaRegistry.RegisterIdentifiableMapping(foodIds.BLESSED_CARROT_ENTRY, foodIds.BLESSED_CARROT_VEGGIE);
+            PediaRegistry.SetPediaCategory(foodIds.BLESSED_CARROT_ENTRY, PediaRegistry.PediaCategory.RESOURCES);
+            SlimePediaCreation.CreateSlimePediaForItemWithName(foodIds.BLESSED_CARROT_ENTRY, foodIds.BLESSED_CARROT_VEGGIE,
+                "Blessed Carrot",
+                "A supernatural carrot only for the holiest of slimes.",
+                "Veggie",
+                "Angel Slime",
+                "This is a special carrot formed through a process of transmutation that can only be done by the Blessed Slime. It carries all the nutrients needed for a supernatural slime to survive, but leaves something to be desired in terms of taste.",
+                "A garden's receptor will not accept Blessed Carrots, as it is not accustomed to growing such things. This food can only be obtained from a Blessed Slime.");
+            PediaRegistry.RegisterIdEntry(foodIds.BLESSED_CARROT_ENTRY, Util.CreateSprite(Util.LoadImage("BsBlessedCarrotIcon.png")));
+
+            PediaRegistry.RegisterIdentifiableMapping(foodIds.CURSED_HEN_ENTRY, foodIds.CURSED_HEN);
+            PediaRegistry.SetPediaCategory(foodIds.CURSED_HEN_ENTRY, PediaRegistry.PediaCategory.RESOURCES);
+            SlimePediaCreation.CreateSlimePediaForItemWithName(foodIds.CURSED_HEN_ENTRY, foodIds.CURSED_HEN,
+                "Cursed Hen",
+                "A supernatural hen only safe for the unholiest slimes to consume.",
+                "Meat",
+                "Demon Slime",
+                "This is a special hen formed through a process of transmutation that can only be done by the Cursed Slime. It is filled to the brim with unhealthy nutrients, creating an item so tasty that others can't help but to indulge in gluttony.",
+                "No matter how many Roostros you place with a Cursed Hen, the former will refuse to interact with the latter. This food can only be obtained from a Cursed Slime.");
+            PediaRegistry.RegisterIdEntry(foodIds.CURSED_HEN_ENTRY, Util.CreateSprite(Util.LoadImage("BsCursedHenIcon.png")));
+
+            PediaRegistry.RegisterIdentifiableMapping(foodIds.GHOSTLY_POGO_ENTRY, foodIds.GHOSTLY_POGO_FRUIT);
+            PediaRegistry.SetPediaCategory(foodIds.GHOSTLY_POGO_ENTRY, PediaRegistry.PediaCategory.RESOURCES);
+            SlimePediaCreation.CreateSlimePediaForItemWithName(foodIds.GHOSTLY_POGO_ENTRY, foodIds.GHOSTLY_POGO_FRUIT,
+                "Ghostly Pogofruit",
+                "A supernatural pogofruit designed specifically for slimes in limbo.",
+                "Fruit",
+                "Spirit Slime",
+                "This is a special pogofruit formed through a process of transmutation that can only be done by the Ghostly Slime. Its nutritional contents are unknown and seemingly ever-changing, but Spirit Slimes seem to love them.",
+                "A garden's receptor will not accept Ghostly Pogofruits, as it is not accustomed to growing such things. This food can only be obtained from a Ghostly Slime.");
+            PediaRegistry.RegisterIdEntry(foodIds.GHOSTLY_POGO_ENTRY, Util.CreateSprite(Util.LoadImage("BsGhostlyPogoIcon.png")));
+
+            PediaRegistry.RegisterIdentifiableMapping(foodIds.AMALGAMANGO_ENTRY, foodIds.AMALGAMANGO_FRUIT);
+            PediaRegistry.SetPediaCategory(foodIds.AMALGAMANGO_ENTRY, PediaRegistry.PediaCategory.RESOURCES);
+            SlimePediaCreation.CreateSlimePediaForItemWithName(foodIds.AMALGAMANGO_ENTRY, foodIds.AMALGAMANGO_FRUIT,
+                "Amalgamango",
+                "An unappetizing abomination only fit for equally disgusting amalgamations.",
+                "Fruit",
+                "Angemon Slime",
+                "This is a horrifying type of mango formed through a process of transmutation that can only be done by the Blursed Slime. It is gooey and disgusting, though it gives off a deceptive aroma that tempts other slimes to eat it.",
+                "A garden's receptor will not accept Amalgamangoes, as well it shouldn't. This food can only be obtained from a Blursed Slime, but why would you want to?");
+            PediaRegistry.RegisterIdEntry(foodIds.AMALGAMANGO_ENTRY, Util.CreateSprite(Util.LoadImage("BsAmalgamangoIcon.png")));
+
+            PediaRegistry.RegisterIdentifiableMapping(foodIds.BLURSED_PEAR_ENTRY, foodIds.BLURSED_PEAR_FRUIT);
+            PediaRegistry.SetPediaCategory(foodIds.BLURSED_PEAR_ENTRY, PediaRegistry.PediaCategory.RESOURCES);
+            SlimePediaCreation.CreateSlimePediaForItemWithName(foodIds.BLURSED_PEAR_ENTRY, foodIds.BLURSED_PEAR_FRUIT,
+                "Blursed Pear",
+                "A supernatural pear that can only be eaten by a certain purified hybrid.",
+                "Fruit",
+                "Purified Angemon Slime",
+                "This is a special pear formed through a process of transmutation that can only be done by the Purified Blursed Slime. It combines the nutritional value of the Blessed Carrot with the tastiness of the Cursed Hen, creating what many Slime Scientists believe to be the ultimate food item.",
+                "A garden's receptor will not accept Blursed Pears, as it is not accustomed to growing such things. This food can only be obtained from a Purified Blursed Slime.");
+            PediaRegistry.RegisterIdEntry(foodIds.BLURSED_PEAR_ENTRY, Util.CreateSprite(Util.LoadImage("BsAmalgamangoIcon.png")));
+
+            PediaRegistry.SetPediaCategory(zoneIds.INBETWEEN_ENTRY, PediaRegistry.PediaCategory.WORLD);
+            SlimePediaCreation.CreateZoneSlimePedia(zoneIds.INBETWEEN_ENTRY, zoneIds.INBETWEEN,
+                "In-Between",
+                "In-Between",
+                "In-Between",
+                "The grounds of a war as old as time.",
+                "The In-Between is an area within a sort of pocket dimension, serving as the battleground in a war between the Angel and Demon Slimes. Oddly enough, Quantum Slimes can also be found here, seeming to get here via their teleportation abilities. The Slime Sea is absent here, replaced by a sea made entirely of souls. Such souls can be seen moving along the surface of the ocean, as well as floating throughout the air. Any object entering the Soul Sea causes a few souls to fly into the air before splashing back down again. Similarly to the Slime Sea, slimes do not actually die when falling into the Soul Sea; in fact, the Quantum Slimes seem to go back to the Ancient Ruins, while the Angel and Demon Slimes go back to Heaven and Hades, respectively. Spirit Slimes are transformed back into either Angel or Demon Slimes and sent back to the respective dimension.");
+            PediaRegistry.RegisterIdEntry(zoneIds.INBETWEEN_ENTRY, Util.CreateSprite(Util.LoadImage("PinksInBetweenIcon.png")));
+            ZoneDirector.zonePediaIdLookup.Add(zoneIds.INBETWEEN, zoneIds.INBETWEEN_ENTRY);
+            TranslationPatcher.AddGlobalTranslation("l.presence.N's lab", "Investigating the mysteries of N's lab");
         }
         public static GameObject CreateLargo(Identifiable.Id newLargoID, Identifiable.Id firstSlime, Identifiable.Id secondSlime)
         {
@@ -979,6 +1040,7 @@ namespace HolySlimes
 
             SRML.Console.Console.RegisterCommand(new SpiritMode());
             SRML.Console.Console.RegisterCommand(new SpiritRandom());
+            SRML.Console.Console.RegisterCommand(new AbilityGiving());
 
             /*TranslationPatcher.AddActorTranslation("l.angel_toy", "Halo Plush");
             var slimeDataAssets = slimeData.LoadAllAssets();

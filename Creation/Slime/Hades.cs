@@ -118,15 +118,15 @@ namespace HolySlimes.Creation.Slime
                 SlimeExpressionFace slimeExpressionFace = expressionFaces[k];
                 if ((bool)slimeExpressionFace.Mouth)
                 {
-                    slimeExpressionFace.Mouth.SetColor("_MouthBot", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Mouth.SetColor("_MouthBot", new Color32(66, 0, 0, 255));
                     slimeExpressionFace.Mouth.SetColor("_MouthMid", new Color32(102, 0, 0, 255));
-                    slimeExpressionFace.Mouth.SetColor("_MouthTop", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Mouth.SetColor("_MouthTop", new Color32(143, 0, 0, 255));
                 }
                 if ((bool)slimeExpressionFace.Eyes)
                 {
-                    slimeExpressionFace.Eyes.SetColor("_EyeRed", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Eyes.SetColor("_EyeRed", new Color32(66, 0, 0, 255));
                     slimeExpressionFace.Eyes.SetColor("_EyeGreen", new Color32(102, 0, 0, 255));
-                    slimeExpressionFace.Eyes.SetColor("_EyeBlue", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Eyes.SetColor("_EyeBlue", new Color32(66, 0, 0, 255));
                 }
             }
             slimeAppearance.Face.OnEnable();
@@ -212,15 +212,15 @@ namespace HolySlimes.Creation.Slime
                 SlimeExpressionFace slimeExpressionFace = expressionFaces[k];
                 if ((bool)slimeExpressionFace.Mouth)
                 {
-                    slimeExpressionFace.Mouth.SetColor("_MouthBot", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Mouth.SetColor("_MouthBot", new Color32(66, 0, 0, 255));
                     slimeExpressionFace.Mouth.SetColor("_MouthMid", new Color32(102, 0, 0, 255));
-                    slimeExpressionFace.Mouth.SetColor("_MouthTop", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Mouth.SetColor("_MouthTop", new Color32(143, 0, 0, 255));
                 }
                 if ((bool)slimeExpressionFace.Eyes)
                 {
-                    slimeExpressionFace.Eyes.SetColor("_EyeRed", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Eyes.SetColor("_EyeRed", new Color32(66, 0, 0, 255));
                     slimeExpressionFace.Eyes.SetColor("_EyeGreen", new Color32(102, 0, 0, 255));
-                    slimeExpressionFace.Eyes.SetColor("_EyeBlue", new Color32(102, 0, 0, 255));
+                    slimeExpressionFace.Eyes.SetColor("_EyeBlue", new Color32(66, 0, 0, 255));
                 }
             }
             slimeAppearance.Face.OnEnable();

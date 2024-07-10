@@ -49,6 +49,12 @@ namespace ModdedIds
         public static readonly Identifiable.Id CURSED_HEN;
         public static readonly Identifiable.Id AMALGAMANGO_FRUIT;
         public static readonly Identifiable.Id BLURSED_PEAR_FRUIT;
+
+        public static readonly PediaDirector.Id BLESSED_CARROT_ENTRY;
+        public static readonly PediaDirector.Id GHOSTLY_POGO_ENTRY;
+        public static readonly PediaDirector.Id CURSED_HEN_ENTRY;
+        public static readonly PediaDirector.Id AMALGAMANGO_ENTRY;
+        public static readonly PediaDirector.Id BLURSED_PEAR_ENTRY;
     }
     [EnumHolder]
     public class chromaIds
@@ -62,6 +68,17 @@ namespace ModdedIds
         public static readonly ZoneDirector.Zone INBETWEEN;
         public static readonly ZoneDirector.Zone HADES;
         public static readonly ZoneDirector.Zone HEAVEN;
+
+        public static readonly PediaDirector.Id INBETWEEN_ENTRY;
+        public static readonly PediaDirector.Id HADES_ENTRY;
+        public static readonly PediaDirector.Id HEAVEN_ENTRY;
+    }
+    [EnumHolder]
+    public class ambianceIds
+    {
+        public static readonly AmbianceDirector.Zone INBETWEEN;
+        public static readonly AmbianceDirector.Zone HADES;
+        public static readonly AmbianceDirector.Zone HEAVEN;
     }
     [EnumHolder]
     public class gordoIds
@@ -79,11 +96,14 @@ namespace ModdedIds
         public static readonly Identifiable.Id BLESSED_ESSENCE;
         public static readonly Identifiable.Id CURSED_ESSENCE;
         public static readonly Identifiable.Id GHOSTLY_ESSENCE;
+
+        //public static readonly Identifiable.Id HEAVENLY_PLORT;
     }
     [EnumHolder]
     public class gadgetIds
     {
         public static readonly Gadget.Id ANGEL_DEMON_COMBINER;
+        //public static readonly Gadget.Id ANGSLIME_PURIFIER;
     }
     [EnumHolder]
     public class toyIds

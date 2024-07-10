@@ -4,15 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HolySlimes.Utility;
+using SimpleSRmodLibrary.Creation;
 using UnityEngine;
 using HarmonyLib;
 using MonomiPark.SlimeRancher.Regions;
 namespace HolySlimes
 {
+    [HarmonyPatch(typeof(PlayerZoneTracker), "OnEntered")]
+    internal class Patch_ZoneTracker
+    {
+        private static void Postfix(ZoneDirector.Zone zone)
+        {
+            if (zone == ModdedIds.zoneIds.INBETWEEN)
+            {
+                SRSingleton<SceneContext>.Instance.PediaDirector.MaybeShowPopup(ModdedIds.zoneIds.INBETWEEN_ENTRY);
+            }
+            else if (zone == ModdedIds.zoneIds.HADES)
+            {
+                SRSingleton<SceneContext>.Instance.PediaDirector.MaybeShowPopup(ModdedIds.zoneIds.HADES_ENTRY);
+            }
+            else if (zone == ModdedIds.zoneIds.HEAVEN)
+            {
+                SRSingleton<SceneContext>.Instance.PediaDirector.MaybeShowPopup(ModdedIds.zoneIds.HEAVEN_ENTRY);
+            }
+
+        }
+    }
+
     [HarmonyPatch(typeof(ZoneDirector), "GetRegionSetId")]
     internal static class PatchZones
     {
-        // Token: 0x06000030 RID: 48 RVA: 0x0000A690 File Offset: 0x00008890
         internal static bool Prefix(ZoneDirector.Zone zone, ref RegionRegistry.RegionSetId __result)
         {
             var inb = zone == ModdedIds.zoneIds.INBETWEEN || zone == ModdedIds.zoneIds.HADES || zone == ModdedIds.zoneIds.HEAVEN;
@@ -46,25 +67,28 @@ namespace HolySlimes
 
         public static void Init(SceneContext t)
         {
-            inbObjects = inBetween.LoadAllAssets();
-            var inbGObjectsL = new List<GameObject>();
-
-            foreach (var obj in inbObjects) 
-                if (obj is GameObject gobj)
-                    inbGObjectsL.Add(gobj);
-
-            inbGObjects = inbGObjectsL.ToArray();
-
-            var inbZoneObj = inbGObjects.FirstOrDefault(obj => obj.name == "zoneBETWEEN");
-
-            if (inbZoneObj != null)
+            if (inbetweenObject == null)
             {
-                InbetweenLoad(inbZoneObj, t);
+                inbObjects = inBetween.LoadAllAssets();
+                var inbGObjectsL = new List<GameObject>();
+
+                foreach (var obj in inbObjects)
+                    if (obj is GameObject gobj)
+                        inbGObjectsL.Add(gobj);
+
+                inbGObjects = inbGObjectsL.ToArray();
+
+                var inbZoneObj = inbGObjects.FirstOrDefault(obj => obj.name == "zoneBETWEEN");
+
+                if (inbZoneObj != null)
+                {
+                    InbetweenLoad(inbZoneObj, t);
+                }
             }
             //Gordos();
         }
 
-        private static void PrepMaterials(object[] zoneData)
+        private static void PrepMaterials(UnityEngine.Object[] zoneData)
         {
             foreach(var obj in zoneData)
             {
@@ -76,18 +100,29 @@ namespace HolySlimes
             }
         }
         private static GameObject[] inbGObjects;
-        private static object[] inbObjects;
+        private static UnityEngine.Object[] inbObjects;
 
         private static void PrepSpawner(DirectedSlimeSpawner ss)
         {
-            foreach (var ssm in ss.constraints[0].slimeset.members)
+
+            if (ss.gameObject.name.Contains("SpawnerQ"))
             {
+                ss.spawnFX = GameContext.Instance.LookupDirector.GetPrefab(Identifiable.Id.QUANTUM_SLIME).GetComponent<QuantumSlimeSuperposition>().SuperposeParticleFx;
+            }
+            foreach (var ssm in ss.constraints[0].slimeset.members)
                 try
                 {
                     ssm.prefab = GameContext.Instance.LookupDirector.GetPrefab((Identifiable.Id)Enum.Parse(typeof(Identifiable.Id), ssm.prefab.name));
                 }
-                catch{}
-                }
+                catch { }
+        }
+
+        private static void PrepCells(GameObject zone, AmbianceDirector.Zone amb)
+        {
+            foreach (var cd in zone.GetComponentsInChildren<CellDirector>(true))
+            {
+                cd.ambianceZone = amb;
+            }
         }
 
         private static void Spawners(GameObject zone)
@@ -100,7 +135,10 @@ namespace HolySlimes
 
         private static void InbetweenLoad(GameObject prefab, SceneContext t)
         {
-            PrepMaterials(inbObjects);
+            var amb = (inbObjects.FirstOrDefault(obj => obj.name == "AmbianceDirectorZoneSetting_BETWEEN") as AmbianceDirectorZoneSetting);
+            amb.zone = ModdedIds.ambianceIds.INBETWEEN;
+
+            SceneContext.Instance.AmbianceDirector.zoneSettings.AddItem<AmbianceDirectorZoneSetting>(amb);            PrepMaterials(inbObjects);
             prefab.GetComponent<ZoneDirector>().zone = ModdedIds.zoneIds.INBETWEEN;
 
             Spawners(prefab);
@@ -123,6 +161,13 @@ namespace HolySlimes
 
             inbSeaKill.playerKillFx = inbSeaFX;
             inbSeaKill.killFX = inbSeaFX;
+            var worldObjectsCreation = SceneContext.Instance.gameObject.AddComponent<WorldObjectsCreation>();
+            var gadCount = 0;
+            foreach (var gadgetSite in inb.GetComponentsInChildren<GadgetSite>())
+            {
+                worldObjectsCreation.BuildGadgetSite(gadgetSite.transform.parent.parent.gameObject, "INB" + gadCount, gadgetSite.gameObject);
+                gadCount++;
+            }            
 
             inbetweenObject = inb;
         }

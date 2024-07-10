@@ -16,8 +16,6 @@ namespace HolySlimes.Creation.Slime
     {
         public static (SlimeDefinition, GameObject, SlimeAppearance) BlursedSlime()
         {
-            Color32 Beyes = new Color32(118, 103, 117, 255);
-            Color32 Bmouth = new Color32(118, 103, 117, 255);
             var blursedSlime = ShortcutLib.Shortcut.Slime.CreateSlime(Identifiable.Id.PUDDLE_SLIME, Identifiable.Id.PUDDLE_SLIME, Ids.BLURSED_SLIME, "Blursed Slime", Util.CreateSprite(Util.LoadImage("BsBlursedIcon.png")), new Color32(125, 125, 125, 255), new Color32(125, 125, 125, 255));
             SlimeDefinition BslimeDef = blursedSlime.Item1;
             GameObject BslimeObj = blursedSlime.Item2;
@@ -73,7 +71,7 @@ namespace HolySlimes.Creation.Slime
             Bmat5.SetColor("_MiddleColor", new Color32(218, 100, 40, 255));
             Bmat5.SetColor("_BottomColor", new Color32(225, 25, 25, 255));
             Bstructures[4].DefaultMaterials[0] = Bmat5;
-            BslimeApp.ColorFace(Beyes, Beyes, Beyes, Bmouth, Bmouth, Bmouth);
+            BslimeApp.ColorFace(new Color32(76, 66, 75, 255), new Color32(118, 103, 117, 255), new Color32(76, 66, 75, 255), new Color32(141, 124, 139, 255), new Color32(118, 103, 117, 255), new Color32(76, 66, 75, 255));
             PediaRegistry.RegisterIdEntry(Ids.BLURSED_ENTRY, Util.CreateSprite(Util.LoadImage("BsBlursedIcon.png")));
             return (BslimeDef, BslimeObj, BslimeApp);
         }
@@ -84,8 +82,6 @@ namespace HolySlimes.Creation.Slime
 
         public static (SlimeDefinition, GameObject, SlimeAppearance) AngemonSlime()
         {
-            Color32 Aeyes = new Color32(135, 206, 235, 255);
-            Color32 Amouth = new Color32(102, 0, 0, 255);
             var angemonSlime = ShortcutLib.Shortcut.Slime.CreateSlime(Identifiable.Id.HUNTER_SLIME, Identifiable.Id.PINK_SLIME, Ids.ANGEMON_SLIME, "Angemon Slime", Util.CreateSprite(Util.LoadImage("BsAngemonIcon.png")), new Color32(125, 125, 125, 255), new Color32(125, 125, 125, 255));
             SlimeDefinition AslimeDef = angemonSlime.Item1;
             GameObject AslimeObj = angemonSlime.Item2;
@@ -139,7 +135,7 @@ namespace HolySlimes.Creation.Slime
             Amat5.SetColor("_MiddleColor", new Color32(218, 100, 40, 255));
             Amat5.SetColor("_BottomColor", new Color32(225, 25, 25, 255));
             Astructures[4].DefaultMaterials[0] = Amat5;
-            AslimeApp.ColorFace(Aeyes, Aeyes, Aeyes, Amouth, Amouth, Amouth);
+            AslimeApp.ColorFace(new Color32(35, 160, 209, 255), new Color32(135, 206, 235, 255), new Color32(35, 160, 209, 255), new Color32(143, 0, 0, 255), new Color32(102, 0, 0, 255), new Color32(66, 0, 0, 255));
             PediaRegistry.RegisterIdEntry(Ids.ANGEMON_ENTRY, Util.CreateSprite(Util.LoadImage("BsAngemonIcon.png")));
 
             GameObject AngemonPlort = ShortcutLib.Shortcut.Slime.CreatePlort(Identifiable.Id.ROCK_PLORT, Ids.ANGEMON_PLORT, "Angemon Plort", Util.CreateSprite(Util.LoadImage("BsAngemonPlortIcon.png")), new Color32(125, 125, 125, 255), 1f, 5f);
