@@ -352,7 +352,7 @@ namespace HolySlimes
                 "The In-Between is an area within a sort of pocket dimension, serving as the battleground in a war between the Angel and Demon Slimes. Oddly enough, Quantum Slimes can also be found here, seeming to get here via their teleportation abilities. The Slime Sea is absent here, replaced by a sea made entirely of souls. Such souls can be seen moving along the surface of the ocean, as well as floating throughout the air. Any object entering the Soul Sea causes a few souls to fly into the air before splashing back down again. Similarly to the Slime Sea, slimes do not actually die when falling into the Soul Sea; in fact, the Quantum Slimes seem to go back to the Ancient Ruins, while the Angel and Demon Slimes go back to Heaven and Hades, respectively. Spirit Slimes are transformed back into either Angel or Demon Slimes and sent back to the respective dimension.");
             PediaRegistry.RegisterIdEntry(zoneIds.INBETWEEN_ENTRY, Util.CreateSprite(Util.LoadImage("PinksInBetweenIcon.png")));
             ZoneDirector.zonePediaIdLookup.Add(zoneIds.INBETWEEN, zoneIds.INBETWEEN_ENTRY);
-            TranslationPatcher.AddGlobalTranslation("l.presence.N's lab", "Investigating the mysteries of N's lab");
+            TranslationPatcher.AddGlobalTranslation("l.presence.In-Between", "Running through the In-Between!");
         }
         public static GameObject CreateLargo(Identifiable.Id newLargoID, Identifiable.Id firstSlime, Identifiable.Id secondSlime)
         {

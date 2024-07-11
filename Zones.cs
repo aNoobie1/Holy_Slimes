@@ -36,8 +36,8 @@ namespace HolySlimes
     {
         internal static bool Prefix(ZoneDirector.Zone zone, ref RegionRegistry.RegionSetId __result)
         {
-            var inb = zone == ModdedIds.zoneIds.INBETWEEN || zone == ModdedIds.zoneIds.HADES || zone == ModdedIds.zoneIds.HEAVEN;
-            if (inb)
+            var z = zone == ModdedIds.zoneIds.INBETWEEN || zone == ModdedIds.zoneIds.HADES || zone == ModdedIds.zoneIds.HEAVEN;
+            if (z)
             {
                 __result = RegionRegistry.RegionSetId.HOME;
                 return false;
@@ -102,12 +102,16 @@ namespace HolySlimes
         private static GameObject[] inbGObjects;
         private static UnityEngine.Object[] inbObjects;
 
+
+        public static (GameObject, GameObject) inbetweenEffects;
+
         private static void PrepSpawner(DirectedSlimeSpawner ss)
         {
 
             if (ss.gameObject.name.Contains("SpawnerQ"))
             {
                 ss.spawnFX = GameContext.Instance.LookupDirector.GetPrefab(Identifiable.Id.QUANTUM_SLIME).GetComponent<QuantumSlimeSuperposition>().SuperposeParticleFx;
+                ss.slimeSpawnFX = GameContext.Instance.LookupDirector.GetPrefab(Identifiable.Id.QUANTUM_SLIME).GetComponent<QuantumSlimeSuperposition>().SuperposeParticleFx;
             }
             foreach (var ssm in ss.constraints[0].slimeset.members)
                 try
@@ -138,7 +142,8 @@ namespace HolySlimes
             var amb = (inbObjects.FirstOrDefault(obj => obj.name == "AmbianceDirectorZoneSetting_BETWEEN") as AmbianceDirectorZoneSetting);
             amb.zone = ModdedIds.ambianceIds.INBETWEEN;
 
-            SceneContext.Instance.AmbianceDirector.zoneSettings.AddItem<AmbianceDirectorZoneSetting>(amb);            PrepMaterials(inbObjects);
+            SceneContext.Instance.AmbianceDirector.zoneSettings.AddItem<AmbianceDirectorZoneSetting>(amb);
+            PrepMaterials(inbObjects);
             prefab.GetComponent<ZoneDirector>().zone = ModdedIds.zoneIds.INBETWEEN;
 
             Spawners(prefab);
@@ -151,7 +156,6 @@ namespace HolySlimes
             inb.transform.position = new Vector3(inb.transform.position.x, -250, inb.transform.position.z);
 
             var inbSea = inb.FindChild("SoulSea").FindChild("Floor");
-
             var inbSeaFollow = inbSea.transform.parent.gameObject.AddComponent<seaFollowCamera>();
 
             inbSeaFollow.mainCamera = Camera.current;
@@ -168,6 +172,10 @@ namespace HolySlimes
                 worldObjectsCreation.BuildGadgetSite(gadgetSite.transform.parent.parent.gameObject, "INB" + gadCount, gadgetSite.gameObject);
                 gadCount++;
             }            
+            inbetweenEffects = (inb.FindChild("SoulSea").FindChild("Effects"), inb.FindChild("SoulSea").FindChild("SkyEffects"));
+
+            inbetweenEffects.Item1.SetActive(ParticleConfig.SHOW_PARTICLES_INBETWEEN);
+            inbetweenEffects.Item2.SetActive(ParticleConfig.SHOW_PARTICLES_INBETWEEN);
 
             inbetweenObject = inb;
         }

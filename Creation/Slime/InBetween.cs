@@ -83,7 +83,7 @@ namespace HolySlimes.Creation.Slime
             (GameObject, SlimeAppearanceObject, SlimeAppearance.SlimeBone[]) demOrbStructure = Structure.CreateBasicStructure(customOrbs, "demorbspirit", "slime_demorb", SlimeAppearance.SlimeBone.Slime, SlimeAppearance.SlimeBone.None, orbAttachedBones, RubberBoneEffect.RubberType.Slime, true, true);
             demOrbStructure.Item1.AddComponent<vp_Spin>();
             Structure.SetStructureElement("slimeOrbDem", slimeAppearance, new SlimeAppearanceObject[] { demOrbStructure.Item2 }, 4, true, false);
-            Material material = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.QUANTUM_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
+            Material material = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.RAD_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
             material.SetColor("_TopColor", new Color32(25, 25, 25, 255));
             material.SetColor("_MiddleColor", new Color32(125, 125, 125, 255));
             material.SetColor("_BottomColor", new Color32(225, 225, 225, 255));
@@ -95,7 +95,7 @@ namespace HolySlimes.Creation.Slime
             material2.SetColor("_MiddleColor", new Color32(13, 13, 13, 255));
             material2.SetColor("_EdgeColor", new Color32(13, 13, 13, 255));
             structures[1].DefaultMaterials[0] = material2;
-            Material material3 = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.QUANTUM_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
+            Material material3 = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.RAD_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
             material3.SetColor("_TopColor", new Color32(25, 25, 25, 255));
             material3.SetColor("_MiddleColor", new Color32(125, 125, 125, 255));
             material3.SetColor("_BottomColor", new Color32(225, 225, 225, 255));
@@ -190,7 +190,7 @@ namespace HolySlimes.Creation.Slime
             };
             slimeDefinition.AppearancesDefault[0] = slimeAppearance;
             SlimeAppearanceStructure[] structures = slimeAppearance.Structures;
-            Material material = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.QUANTUM_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
+            Material material = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.RAD_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
             material.SetColor("_TopColor", new Color32(25, 25, 25, 255));
             material.SetColor("_MiddleColor", new Color32(225, 225, 225, 255));
             material.SetColor("_BottomColor", new Color32(125, 125, 125, 255));
@@ -198,7 +198,7 @@ namespace HolySlimes.Creation.Slime
             material.SetFloat("_Shininess", 1f);
             material.SetFloat("_Gloss", 1f);
             structures[0].DefaultMaterials[0] = material;
-            Material material2 = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.QUANTUM_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
+            Material material2 = UnityEngine.Object.Instantiate(SRSingleton<GameContext>.Instance.SlimeDefinitions.GetSlimeByIdentifiableId(Identifiable.Id.RAD_SLIME).AppearancesDefault[0].Structures[0].DefaultMaterials[0]);
             material2.SetColor("_TopColor", new Color32(25, 25, 25, 255));
             material2.SetColor("_MiddleColor", new Color32(225, 225, 225, 255));
             material2.SetColor("_BottomColor", new Color32(125, 125, 125, 255));
