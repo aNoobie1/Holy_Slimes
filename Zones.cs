@@ -170,7 +170,7 @@ namespace HolySlimes
 
 
             inb.transform.position = t.player.transform.position;
-            inb.transform.position = new Vector3(inb.transform.position.x, -850, inb.transform.position.z);
+            inb.transform.position = new Vector3(inb.transform.position.x, -250, inb.transform.position.z);
 
             var inbSea = inb.FindChild("SoulSea").FindChild("Floor");
             var inbSeaFollow = inbSea.transform.parent.gameObject.AddComponent<seaFollowCamera>();

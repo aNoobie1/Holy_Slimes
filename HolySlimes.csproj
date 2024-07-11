@@ -183,4 +183,9 @@
     <None Include="AssetBundles\Zones\heavenzone" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)Holy_Slimes.dll" "C:\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SRML\Mods\SRModsNoobie\HolySlimes\Holy_Slimes.dll"
+copy /Y "$(TargetDir)Holy_Slimes.pdb" "C:\Program Files (x86)\Steam\steamapps\common\Slime Rancher\SRML\Mods\SRModsNoobie\HolySlimes\Holy_Slimes.pdb"
+start steam://rungameid/433340</PostBuildEvent>
+  </PropertyGroup>
 </Project>
