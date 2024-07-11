@@ -31,6 +31,23 @@ namespace HolySlimes
         }
     }
 
+    [HarmonyPatch(typeof(Region), "OnRegionSetDeactivated")]
+    internal class Patch_DebugPrintRegionDeactivation
+    {
+        private static bool Prefix(Region __instance)
+        {
+            if(__instance.regionReg.GetCurrentRegionSetId() == RegionRegistry.RegionSetId.HOME)
+            {
+                return !DebugConfig.DEV_STOP_HOME_CELL_DEACTIVATION;
+            }
+            return true;
+        }
+        private static void Postfix(Region __instance)
+        {
+            SRML.Console.Console.Log("Deactiving cell \"" + __instance.gameObject.name + "\"!");
+        }
+    }
+
     [HarmonyPatch(typeof(ZoneDirector), "GetRegionSetId")]
     internal static class PatchZones
     {
@@ -153,7 +170,7 @@ namespace HolySlimes
 
 
             inb.transform.position = t.player.transform.position;
-            inb.transform.position = new Vector3(inb.transform.position.x, -250, inb.transform.position.z);
+            inb.transform.position = new Vector3(inb.transform.position.x, -850, inb.transform.position.z);
 
             var inbSea = inb.FindChild("SoulSea").FindChild("Floor");
             var inbSeaFollow = inbSea.transform.parent.gameObject.AddComponent<seaFollowCamera>();

@@ -13,6 +13,12 @@ namespace HolySlimes
         public static readonly bool SHOW_PARTICLES_HEAVEN = true;
         //public static readonly bool SHOW_PARTICLES_HADES = true;
     }
+    [ConfigFile("debug", "DEV")]
+    public class DebugConfig
+    {
+        public static readonly bool DEV_PRINT_CELL_DEACTIVATION = false;
+        public static readonly bool DEV_STOP_HOME_CELL_DEACTIVATION = false;
+    }
 
     public class ConfigUpdater : SRSingleton<ConfigUpdater> 
     {
