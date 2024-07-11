@@ -1,4 +1,5 @@
-﻿using SRML.Utils.Enum;
+﻿using MonomiPark.SlimeRancher.Regions;
+using SRML.Utils.Enum;
 
 namespace ModdedIds
 {
